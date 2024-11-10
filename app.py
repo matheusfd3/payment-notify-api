@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, send_file
+from flask import Flask, jsonify, request, send_file, render_template
 from repository.database import db
 from models.payment import Payment
 from datetime import datetime, timedelta
@@ -42,7 +42,12 @@ def confirm_pix_payment():
 
 @app.route("/payments/pix/<int:payment_id>", methods=["GET"])
 def get_pix_payment_page(payment_id):
-    return "Pix payment page"
+    payment = Payment.query.get(payment_id)
+    return render_template("payment.html", 
+                           payment_id=payment_id, 
+                           amount=payment.amount, 
+                           host="http://127.0.0.1:5000", 
+                           qr_code=payment.qr_code)
 
 if __name__ == "__main__":
     app.run(debug=True)
