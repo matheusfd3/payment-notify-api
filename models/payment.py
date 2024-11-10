@@ -6,4 +6,4 @@ class Payment(db.Model):
     paid = db.Column(db.Boolean, default=False) 
     bank_payment_id = db.Column(db.Integer, nullable=True)
     qr_code = db.Column(db.String(100), nullable=True)
-    expiration_date = db.Column(db.DateTime, nullable=True)
+    expiration_date = db.Column(db.DateTime)

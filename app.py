@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from repository.database import db
 from models.payment import Payment
 
@@ -10,6 +10,7 @@ db.init_app(app)
 
 @app.route("/payments/pix", methods=["POST"])
 def create_pix_payment():
+    data = request.get_json()
     return jsonify({"message": "Pix payment created"})
 
 @app.route("/payments/pix/confirm", methods=["POST"])
