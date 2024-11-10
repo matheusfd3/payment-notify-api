@@ -34,7 +34,7 @@ def create_pix_payment():
 
 @app.route("/payments/pix/qr_code/<file_name>", methods=["GET"])
 def get_qr_code(file_name):
-    return send_file(f"static/qrcodes/{file_name}.png", mimetype="image/png")
+    return send_file(f"static/qr_codes/{file_name}.png", mimetype="image/png")
 
 @app.route("/payments/pix/confirm", methods=["POST"])
 def confirm_pix_payment():

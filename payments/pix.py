@@ -13,7 +13,7 @@ class Pix:
 
         img = qrcode.make(hash_payment)
 
-        img.save(f"static/qrcodes/qr_code_payment_{bank_payment_id}.png")
+        img.save(f"static/qr_codes/qr_code_payment_{bank_payment_id}.png")
 
         return {"bank_payment_id": bank_payment_id, 
                 "qr_code_path": f"qr_code_payment_{bank_payment_id}"}
