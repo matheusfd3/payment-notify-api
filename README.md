@@ -51,7 +51,7 @@ A aplicação utiliza **Socket.IO** para manter uma comunicação em tempo real 
    ```bash
    git clone https://github.com/matheusfd3/payment-notify-api.git
    
-   cd tasks-flask-crud
+   cd payment-notify-api
    ```
 2. **Instale as dependências:**:
     ```bash
